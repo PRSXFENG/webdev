@@ -56,8 +56,8 @@ type="checkbox"
 		
 		<!-- textfield: disabled (cannot send data) or readonly (cannot send data)-->		
 		<label for="cust">Customer Name</label>
-		<input ______ size="35" id="cust" name="cust" 
-		maxlength="30" ______ required><br>
+		<input type="text" size="35" id="cust" name="cust" 
+		maxlength="30" placeholder="eg. Handsome Boy" required><br>
 		
 		<!-- radio button-->	
 		Base
