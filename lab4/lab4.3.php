@@ -34,5 +34,11 @@
     $qty=2;
 ?>
 
+Unit Price: <?=number_format($upc)?><br>
+Total Price: <?=findTotalPrice($upc,$qty)?><br>
+Price w/o Discount: <?=findPriceDiscount($upc,$qty)?><br>
+Price w/ 10% Discount: <?=findPriceDiscount($upc,$qty,30)?><br>
+Unit Prioce: <?=number_format($upc,2,".",",")?><br>
+
 </body>
 </html>
