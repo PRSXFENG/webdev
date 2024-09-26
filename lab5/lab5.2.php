@@ -7,37 +7,41 @@ empty() check variable is considered "empty"
 
 //REQUEST to retreive web form data
 //retrieve & checked element's value using ?:
-$cust=______
+$cust=!empty($_REQUEST['cust']) ? $_REQUEST['cust'] :"";
 
 //retrieve & checked element's value using IF..ELSE
-______
+if(isset($_POST['base']))
+    $base = $_POST['base'];
+else
+    $base = "";
 
-$type = ______;
+$type = !empty($_POST['type']) ? $_POST['type'] : "";
 
 //retrieve & checked element's value using ?? (null coalescing operator)
-$src1 = ______
-$src2 = ______
+$src1 = $_POST['src1'] ?? ""; # $src1 = isset($_POST['src1'] ?? "";)?$_POST['src1']:"";
+$src2 = $_POST['src2'] ?? "";
 
 ?>
 <p>Customer Name: <?php echo $cust?></p>
-<p>Base: ______</p>
-<p>Type: ______</p>
-<p>Source: ______&nbsp;&nbsp;______</p>
+<p>Base: <?=base?></p>
+<p>Type: <?=type?></p>
+<p>Source: <?=$src1?>&nbsp;&nbsp;<?=$src2?></p>
 <p>Topping:
 <?php
 //retrieve data from listbox
-$topping = ______
-______
-$remark=______
-$odate=______
-$tqvm=______
+$topping = !empty($_POST['top']) ? $_POST['top'] : array("");
+foreach($topping as $item)
+    echo $item."&nbsp;&nbsp;";
+$remark=!empty($_POST['descr']) ? $_POST['descr'] : "";
+$odate=!empty($_POST['odate']) ? $_POST['odate'] : "";
+$tqvm=!empty($_POST['txtSecret']) ? $_POST['txtSecret'] : "";
 
-$delivery = ______
-______
+$delivery = date_create($odate); #datetime
+date_add($delivery, date_interval_create_from_date_string('1 days'));
 
 ?>
 
-<p>Remark: ______</p>
-<p>Order Date: ______></p>
-<p>ETA: ______</p>
-<p>______</p>
+<p>Remark: <?=$remark?></p>
+<p>Order Date: <?=$odate?></p>
+<p>ETA: <?=date_format($delivery, "Y-m-d")?></p>
+<p><?=$tqvm?></p>
