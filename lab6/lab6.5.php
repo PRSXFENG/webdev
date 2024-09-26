@@ -12,16 +12,16 @@ if (!$conn) {
 }
 
 $sql = "SELECT * FROM tborder";
-$result = ______;
+$result = mysqli_query($conn, $sql);
 
-if (______ > 0) {
+if (mysqli_num_rows($result) > 0) { #return table
   // output data of each row
-  ______
+  while(mysqli_fetch_assoc($result)) {
 ?>
     <p> 
-	ID: ______<br>
-	Name: ______ <br>
-	Delivery: ______ <br>
+	ID: <?=$row['id']?><br>
+	Name: <?=$row['cust']?> <br>
+	Delivery: <?=$row['delivery']?> <br>
 	Action: <a href="______">edit</a> 
 	<a href="______">delete</a> </p>
 <?php
