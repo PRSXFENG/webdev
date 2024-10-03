@@ -33,4 +33,4 @@ if (mysqli_num_rows($result) > 0) { #return table
 mysqli_close($conn);
 
 ?>
-______
+<a href="lab6.3.php">Add</a>
