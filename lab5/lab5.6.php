@@ -4,11 +4,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'Upload File')
   if (isset($_FILES['fileUpload']) && $_FILES['fileUpload']['error'] === UPLOAD_ERR_OK)
   {
     // get details of the uploaded file
-    $fileTmpPath = ______
-    $fileName = ______
-    $fileSize = ______
-    $fileType = ______
-    $fileNameCmps = ______ //eg me.jpg -> {"me","jpg"}
+    $fileTmpPath = $_FILES['fileUpload']['tmp_name'];
+    $fileName = $_FILES['fileUpload']['name'];
+    $fileSize = $_FILES['fileUpload']['size'];
+    $fileType = $_FILES['fileUpload']['type'];
+    $fileNameCmps = explode(".",$fileName); //eg me.jpg -> {"me","jpg"}
     $fileExtension = strtolower(end($fileNameCmps)); //end() get array last element eg jpg
  
     //sanitize file-name

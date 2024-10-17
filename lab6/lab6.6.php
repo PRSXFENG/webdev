@@ -26,7 +26,7 @@ if (mysqli_num_rows($result) > 0) {
 	$type=$row["type"];
 	$src1 = $row["src1"];
 	$src2 = $row["src2"];
-	$top=______
+	$top=array($row["top1"],$row["top2"],$row["top3"],$row["top4"]);
 	$ddate=$row["delivery"];
 	$remark = $row["remark"];
   }

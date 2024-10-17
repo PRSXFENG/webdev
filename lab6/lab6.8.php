@@ -14,7 +14,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = ____
+$sql = "DELETE FROM tborder WHERE id = $id";
 
 if (mysqli_query($conn,$sql)) {
   echo "Record deleted successfully";

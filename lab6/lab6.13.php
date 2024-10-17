@@ -13,7 +13,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
-$sql = ______;
+$sql = "SELECT * FROM tbuser WHERE uname='$uname' AND pwd='$pwd'";
 
 $result = mysqli_query($conn, $sql);
 
@@ -21,7 +21,7 @@ if (mysqli_num_rows($result) > 0) {
 	while($row=mysqli_fetch_assoc($result)){
 		$role = $row["role"];
 	}
-	if(______)
+	if($role=="admin")
 		header("Location:lab6.4.php");
 	else
 		header("Location:lab6.2.php");	

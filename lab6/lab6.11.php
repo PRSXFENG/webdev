@@ -18,7 +18,7 @@ $sql="INSERT INTO tborder (cust,based,type,odate,delivery)
 VALUES ('John','pasta','fish','2024-08-18','2024-08-19')";
 
 if (mysqli_query($conn, $sql)) {
-	______
+	$last_id = mysqli_insert_id($conn);
 	echo "Successfully. Last inserted ID is: " . $last_id;
 } else {
 echo "Error: " . $sql. "<br>" . mysqli_error($conn);
