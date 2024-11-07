@@ -10,7 +10,7 @@ $dbname="dbwdev";
 //4. construct SQl stmt & execute
 //5. close connection
 // Create connection - with database
-$conn = __________
+$conn = my_connect($servername, $username, $password);
 
 // Check connection
 if (!$conn) {

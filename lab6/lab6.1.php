@@ -3,9 +3,9 @@ if(isset($_POST["submit"]) && $_POST["submit"]==="GO"){
 	$page=isset($_GET["menu"])?$_GET["menu"]:"";
 
 	if($page=="view"){
-		__________
+		header("location:lab6.5.php")
 	}else{
-		__________
+		header("location:lab6.3.php")
 	}
 }
 ?>
